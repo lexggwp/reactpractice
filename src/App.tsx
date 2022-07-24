@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import './App.css';
-import UncontrolledRating from "./components/Rating/UncontrolledRating";
+import UncontrolledRating from "./components/Accordion/UncontrolledRating/UncontrolledRating";
 import Rating from "./components/Rating/Rating";
 import Accordion from "./components/Accordion/Accordion";
 import UncontrolledAccordion from "./components/UncontrolledAccordion/UncontrolledAccordion";
@@ -17,11 +17,11 @@ function App() {
     return (
         <div className={"App"}>
             <OnOff onOff={onOff} setOnOff={setOnOff}/>
-            <UncontrolledRating/>
             <Rating setRatingValue={setRatingValue} value={ratingValue}/>
             <Accordion setCollapsed={setCollapsed} collapsed={collapsed} title={'Menus'}/>
             <UncontrolledAccordion title={'Menus'}/>
-            <UnControlledOnOff />
+            <UnControlledOnOff status={setOnOff} /> {onOff.toString()}
+            <UncontrolledRating/>
         </div>
     );
 }
