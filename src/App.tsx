@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import './App.css';
-import UncontrolledRating from "./components/Accordion/UncontrolledRating/UncontrolledRating";
+import UncontrolledRating from "./components/UncontrolledRating/UncontrolledRating";
 import Rating from "./components/Rating/Rating";
 import Accordion from "./components/Accordion/Accordion";
 import UncontrolledAccordion from "./components/UncontrolledAccordion/UncontrolledAccordion";
