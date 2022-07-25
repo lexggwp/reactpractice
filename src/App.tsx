@@ -4,7 +4,7 @@ import UncontrolledRating from "./components/Accordion/UncontrolledRating/Uncont
 import Rating from "./components/Rating/Rating";
 import Accordion from "./components/Accordion/Accordion";
 import UncontrolledAccordion from "./components/UncontrolledAccordion/UncontrolledAccordion";
-import UnControlledOnOff from "./components/OnOff/UncontrolledOnOff";
+import UnControlledOnOff from "./components/UncontrolledOnOff/UncontrolledOnOff";
 import OnOff from "./components/OnOff/OnOff";
 
 
