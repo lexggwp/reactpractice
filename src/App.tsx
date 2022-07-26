@@ -12,10 +12,10 @@ import Input from "./components/Input";
 
 function App() {
 
-    let [ratingValue, setRatingValue] = useState(0);
-    let [collapsed, setCollapsed] = useState(false);
-    let [onOff, setOnOff] = useState(false);
-    let [inputValue, setInputValue] = useState('');
+    const [ratingValue, setRatingValue] = useState(0);
+    const [collapsed, setCollapsed] = useState(false);
+    const [onOff, setOnOff] = useState(false);
+    const [inputValue, setInputValue] = useState('');
 
     return (
         <div className={"App"}>
@@ -25,8 +25,8 @@ function App() {
             <UncontrolledAccordion title={'Menus'}/>
             <UnControlledOnOff status={setOnOff} /> {onOff.toString()}
             <UncontrolledRating/>
-            {/*<UncontrolledInput/>*/}
-            <Input setInputValue={setInputValue} value={inputValue}/>  {inputValue}
+            <UncontrolledInput/>
+            <Input callBack={setInputValue} value={inputValue}/>
         </div>
     );
 }

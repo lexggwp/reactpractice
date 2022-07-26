@@ -1,25 +1,19 @@
-import React, {useRef} from 'react';
-
+import React, {ChangeEvent} from 'react';
 
 type InputPropsType = {
-    value: string
-    setInputValue: (value: string) => void;
-
+    value: string;
+    callBack: (value: string) => void;
 }
 
 const Input = (props: InputPropsType) => {
 
-    const inputRef = useRef<HTMLInputElement>(null)
-    const onClick = () => {
-        if (inputRef.current) {
-            props.setInputValue(inputRef.current.value)
-        }
+    const onChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
+        props.callBack(event.currentTarget.value)
     }
 
     return (
         <div>
-            <input ref={inputRef}/>
-            <button onClick={onClick}>save</button>
+            <input onChange={onChangeHandler} value={props.value}/>
         </div>
     );
 };
