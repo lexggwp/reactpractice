@@ -6,6 +6,8 @@ import Accordion from "./components/Accordion/Accordion";
 import UncontrolledAccordion from "./components/UncontrolledAccordion/UncontrolledAccordion";
 import UnControlledOnOff from "./components/UncontrolledOnOff/UncontrolledOnOff";
 import OnOff from "./components/OnOff/OnOff";
+import UncontrolledInput from "./components/UncontrolledInput";
+import Input from "./components/Input";
 
 
 function App() {
@@ -13,6 +15,7 @@ function App() {
     let [ratingValue, setRatingValue] = useState(0);
     let [collapsed, setCollapsed] = useState(false);
     let [onOff, setOnOff] = useState(false);
+    let [inputValue, setInputValue] = useState('');
 
     return (
         <div className={"App"}>
@@ -22,6 +25,8 @@ function App() {
             <UncontrolledAccordion title={'Menus'}/>
             <UnControlledOnOff status={setOnOff} /> {onOff.toString()}
             <UncontrolledRating/>
+            {/*<UncontrolledInput/>*/}
+            <Input setInputValue={setInputValue} value={inputValue}/>  {inputValue}
         </div>
     );
 }
