@@ -6,8 +6,8 @@ import Accordion from "./components/Accordion/Accordion";
 import UncontrolledAccordion from "./components/UncontrolledAccordion/UncontrolledAccordion";
 import UnControlledOnOff from "./components/UncontrolledOnOff/UncontrolledOnOff";
 import OnOff from "./components/OnOff/OnOff";
-import UncontrolledInput from "./components/UncontrolledInput";
-import Input from "./components/Input";
+import UncontrolledInput from "./components/Input/UncontrolledInput";
+import Input from "./components/Input/Input";
 
 
 function App() {
@@ -22,11 +22,16 @@ function App() {
             <OnOff onOff={onOff} setOnOff={setOnOff}/>
             <Rating setRatingValue={setRatingValue} value={ratingValue}/>
             <Accordion setCollapsed={setCollapsed} collapsed={collapsed} title={'Menus'}/>
-            <UncontrolledAccordion title={'Menus'}/>
+            <Input callBack={setInputValue} value={inputValue}/>
+            <UncontrolledAccordion title={'MENU'}/>
             <UnControlledOnOff status={setOnOff} /> {onOff.toString()}
             <UncontrolledRating/>
             <UncontrolledInput/>
-            <Input callBack={setInputValue} value={inputValue}/>
+            <UncontrolledInput/>
+            <UncontrolledInput/>
+
+
+
         </div>
     );
 }
