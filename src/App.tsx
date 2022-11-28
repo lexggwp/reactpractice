@@ -8,7 +8,6 @@ import UnControlledOnOff from "./components/UncontrolledOnOff/UncontrolledOnOff"
 import OnOff from "./components/OnOff/OnOff";
 import UncontrolledInput from "./components/Input/UncontrolledInput";
 import Input from "./components/Input/Input";
-import Select from "./components/Select/Select";
 import NewSelect from "./components/Select/NewSelect";
 
 
@@ -35,7 +34,6 @@ function App() {
         {id: 4, title: 'Vilnius'},
 
     ];
-    const [value, setValue] = useState('');
     const [city, setCity] = useState(selectData[0].title)
 
     return (
@@ -51,8 +49,6 @@ function App() {
             <UnControlledOnOff/>
             <UncontrolledRating/>
             <UncontrolledInput/>
-            <h2>Custom Select</h2>
-            <Select value={value} setValue={setValue} items={selectData}/>
             <h3>Custom Select 2.0</h3>
             <NewSelect city={city} setCity={setCity} selectData={selectData}/>
             <h4>Standard select</h4>
