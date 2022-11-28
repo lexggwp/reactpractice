@@ -9,6 +9,7 @@ import OnOff from "./components/OnOff/OnOff";
 import UncontrolledInput from "./components/Input/UncontrolledInput";
 import Input from "./components/Input/Input";
 import Select from "./components/Select/Select";
+import NewSelect from "./components/Select/NewSelect";
 
 
 function App() {
@@ -26,12 +27,8 @@ function App() {
         {title: 'Ilya', value: 'Minsk'},
         {title: 'Mihail', value: 'Bihov'},
     ];
-    const menu2 = [
-        {title: 'Sosiska', value: 'upala'},
-        {title: 'Новость дня', value: 'дна'},
-        {title: 'Mihail', value: 'Bihov'},
-    ];
-    const select = [
+
+    const selectData = [
         {id: 1, title: 'Minsk'},
         {id: 2, title: 'Moscow'},
         {id: 3, title: 'Kiev'},
@@ -39,20 +36,31 @@ function App() {
 
     ];
     const [value, setValue] = useState('');
+    const [city, setCity] = useState(selectData[0].title)
 
     return (
         <div className={"App"}>
+            <h2>Controlled Components</h2>
             <OnOff onOff={onOff} setOnOff={setOnOff}/>
             <Rating setRatingValue={setRatingValue} value={ratingValue}/>
-            <Accordion onClick={onItemClick} items={menu1} setCollapsed={setCollapsed} collapsed={collapsed} title={'Accordion'}/>
-            <Accordion onClick={onItemClick} items={menu2} setCollapsed={setCollapsed} collapsed={collapsed} title={'Accordion'}/>
+            <Accordion onClick={onItemClick} items={menu1} setCollapsed={setCollapsed} collapsed={collapsed}
+                       title={'Accordion'}/>
             <Input callBack={setInputValue} value={inputValue}/>
-            <UncontrolledAccordion title={'UncontrolledAccordion'}/>
-            <UnControlledOnOff status={setOnOff} /> {onOff.toString()}
+            <h2>Uncontrolled Components</h2>
+            <UncontrolledAccordion title={'Accordion'}/>
+            <UnControlledOnOff/>
             <UncontrolledRating/>
             <UncontrolledInput/>
-        <hr/>
-            <Select value={value} setValue={setValue} items={select}/>
+            <h2>Custom Select</h2>
+            <Select value={value} setValue={setValue} items={selectData}/>
+            <h3>Custom Select 2.0</h3>
+            <NewSelect city={city} setCity={setCity} selectData={selectData}/>
+            <h4>Standard select</h4>
+            <select name="select">
+                <option value="Kiev">Kiev</option>
+                <option value="Minsk">Minsk</option>
+                <option value="Singapore">Singapore</option>
+            </select>
         </div>
     );
 }

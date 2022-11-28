@@ -2,12 +2,9 @@ import React, {useState} from 'react';
 import s from '../OnOff/OnOff.module.css'
 
 
-type UnControlledOnOffPropsType = {
-    status: (active: boolean) => void;
-}
 
 
-const UnControlledOnOff = (props: UnControlledOnOffPropsType) => {
+const UnControlledOnOff = () => {
 
     let [onOff, setOnOff] = useState(false);
 
@@ -15,15 +12,11 @@ const UnControlledOnOff = (props: UnControlledOnOffPropsType) => {
     const classNameOff = `${s.onBlock} ${!onOff ? s.offBlockActivated: ''}`;
     const classNameCircle = `${s.circleBlock} ${onOff ? s.onBlockActivated: s.offBlockActivated}`
 
-    const onClickHandler = (active: boolean) => {
-        setOnOff(active)
-        props.status(active);
-    }
 
     return (
         <div className={s.onOffBlock}>
-            <div onClick={ () => onClickHandler(true)} className={classNameOn}>ON</div>
-            <div onClick={ () => onClickHandler(false)} className={classNameOff}>OFF</div>
+            <div onClick={ () =>  setOnOff(!onOff)} className={classNameOn}>ON</div>
+            <div onClick={ () => setOnOff(!onOff)} className={classNameOff}>OFF</div>
             <div className={classNameCircle}></div>
         </div>
     );
