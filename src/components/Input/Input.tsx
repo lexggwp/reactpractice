@@ -6,7 +6,6 @@ type InputPropsType = {
 }
 
 const Input = (props: InputPropsType) => {
-
     const onChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
         props.callBack(event.currentTarget.value)
     }

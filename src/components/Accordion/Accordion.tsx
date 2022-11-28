@@ -13,14 +13,13 @@ export type AccordionPropsType = {
     collapsed: boolean
     setCollapsed: (collapsed: boolean) => void;
     items: Array<ItemType>;
-    onClick: (value: any) => void;
 }
 
 const Accordion = (props: AccordionPropsType) => {
     return (
         <div>
             <AccordionTitle setCollapsed={props.setCollapsed} collapsed={props.collapsed} title={props.title}/>
-            {!props.collapsed && <AccordionBody onClick={props.onClick} items={props.items}  />}
+            {!props.collapsed && <AccordionBody items={props.items}  />}
         </div>
     );
 };
